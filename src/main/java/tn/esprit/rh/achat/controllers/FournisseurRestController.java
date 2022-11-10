@@ -32,9 +32,8 @@ public class FournisseurRestController {
 
 	@PostMapping("/add-fournisseur")
 	@ResponseBody
-	public Fournisseur addFournisseur(@RequestBody FournisseurRequestModel f) {
-		Fournisseur fournisseur = new Fournisseur(f);
-		return fournisseurService.addFournisseur(fournisseur);
+	public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
+		return fournisseurService.addFournisseur(f);
 	}
 
 	@DeleteMapping("/remove-fournisseur/{fournisseur-id}")
@@ -45,9 +44,8 @@ public class FournisseurRestController {
 
 	@PutMapping("/modify-fournisseur")
 	@ResponseBody
-	public Fournisseur modifyFournisseur(@RequestBody FournisseurRequestModel f) {
-		Fournisseur fournisseur = new Fournisseur(f);
-		return fournisseurService.updateFournisseur(fournisseur);
+	public Fournisseur modifyFournisseur(@RequestBody Fournisseur f) {
+		return fournisseurService.updateFournisseur(f);
 	}
 
 		@PutMapping(value = "/assignSecteurActiviteToFournisseur/{idSecteurActivite}/{idFournisseur}")

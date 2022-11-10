@@ -33,9 +33,8 @@ public class ProduitRestController {
 
 	@PostMapping("/add-produit")
 	@ResponseBody
-	public Produit addProduit(@RequestBody ProduitRequestModel p) {
-		Produit produit = new Produit(p);
-		return produitService.addProduit(produit);
+	public Produit addProduit(@RequestBody Produit p) {
+		return produitService.addProduit(p);
 	}
 
 	@DeleteMapping("/remove-produit/{produit-id}")
@@ -46,9 +45,8 @@ public class ProduitRestController {
 
 	@PutMapping("/modify-produit")
 	@ResponseBody
-	public Produit modifyProduit(@RequestBody ProduitRequestModel p) {
-		Produit produit = new Produit(p);
-		return produitService.updateProduit(produit);
+	public Produit modifyProduit(@RequestBody Produit p) {
+		return produitService.updateProduit(p);
 	}
 
 	@PutMapping(value = "/assignProduitToStock/{idProduit}/{idStock}")

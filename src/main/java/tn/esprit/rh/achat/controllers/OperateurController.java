@@ -32,9 +32,8 @@ public class OperateurController {
 
 	@PostMapping("/add-operateur")
 	@ResponseBody
-	public Operateur addOperateur(@RequestBody OperateurRequestModel op) {
-		Operateur operateur = new Operateur(op);
-		return operateurService.addOperateur(operateur);
+	public Operateur addOperateur(@RequestBody Operateur op) {
+		return operateurService.addOperateur(op);
 	}
 
 	@DeleteMapping("/remove-operateur/{operateur-id}")
@@ -45,9 +44,8 @@ public class OperateurController {
 
 	@PutMapping("/modify-operateur")
 	@ResponseBody
-	public Operateur modifyOperateur(@RequestBody OperateurRequestModel op) {
-		Operateur operateur = new Operateur(op);
-		return operateurService.updateOperateur(operateur);
+	public Operateur modifyOperateur(@RequestBody Operateur op) {
+		return operateurService.updateOperateur(op);
 	}
 
 	

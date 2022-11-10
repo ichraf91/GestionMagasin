@@ -12,7 +12,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tn.esprit.rh.achat.models.SecteurActiviteRequestModel;
 
 @Entity
 @Getter
@@ -33,9 +32,5 @@ public class SecteurActivite implements Serializable{
 	@JsonIgnore
 	private Set<Fournisseur> fournisseurs;
 
-	public SecteurActivite(SecteurActiviteRequestModel s) {
-		this.codeSecteurActivite = s.getCodeSecteurActivite();
-		this.libelleSecteurActivite = s.getLibelleSecteurActivite();
-		this.fournisseurs = s.getFournisseurs();
-	}
+
 }

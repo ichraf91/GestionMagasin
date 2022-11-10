@@ -18,7 +18,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tn.esprit.rh.achat.models.FournisseurRequestModel;
 
 @Entity
 @Getter
@@ -45,14 +44,7 @@ public class Fournisseur implements Serializable {
     @OneToOne(cascade= CascadeType.ALL,fetch=FetchType.EAGER)
     private DetailFournisseur detailFournisseur;
     
-	public Fournisseur (FournisseurRequestModel f){
-		this.code = f.getCode();
-		this.libelle = f.getLibelle();
-		this.categorieFournisseur = f.getCategorieFournisseur();
-		this.factures = f.getFactures();
-		this.secteurActivites = f.getSecteurActivites();
-		this.detailFournisseur = f.getDetailFournisseur();
-	}
+
 	
 }
 

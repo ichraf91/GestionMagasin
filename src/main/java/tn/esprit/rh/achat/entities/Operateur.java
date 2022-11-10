@@ -15,7 +15,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tn.esprit.rh.achat.models.OperateurRequestModel;
 
 @Entity
 @Getter
@@ -36,11 +35,6 @@ public class Operateur implements Serializable{
 	@JsonIgnore
 	private Set<Facture> factures;
 
-	public Operateur (OperateurRequestModel o) {
-		this.nom = o.getNom();
-		this.prenom = o.getPrenom();
-		this.password=o.getPassword();
-		this.factures = o.getFactures();
-	}
+
 	
 }

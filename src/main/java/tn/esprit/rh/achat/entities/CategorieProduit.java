@@ -12,7 +12,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tn.esprit.rh.achat.models.CategorieProduitRequestModel;
 
 @Entity
 @Getter
@@ -32,9 +31,5 @@ public class CategorieProduit implements Serializable {
 	@JsonIgnore
 	private Set<Produit> produits;
 
-	public CategorieProduit (CategorieProduitRequestModel c) {
-		this.codeCategorie = c.getCodeCategorie();
-		this.libelleCategorie = c.getLibelleCategorie();
-		this.produits = c.getProduits();
-	}
+
 }

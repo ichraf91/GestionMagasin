@@ -11,7 +11,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import tn.esprit.rh.achat.models.ReglementRequestModel;
 
 @Entity
 @Getter
@@ -34,11 +33,5 @@ public class Reglement implements Serializable{
 	@JsonIgnore
 	private Facture facture;
 
-	public Reglement(ReglementRequestModel r) {
-		this.montantPaye = r.getMontantPaye();
-		this.montantRestant = r.getMontantRestant();
-		this.payee = r.getPayee();
-		this.dateReglement = r.getDateReglement();
-		this.facture = r.getFacture();
-	}
+
 }

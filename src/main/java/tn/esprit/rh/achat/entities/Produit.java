@@ -16,7 +16,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tn.esprit.rh.achat.models.ProduitRequestModel;
 
 @Entity
 @Getter
@@ -49,16 +48,7 @@ public class Produit implements Serializable {
 	@JsonIgnore
 	private CategorieProduit categorieProduit;
 	
-	public Produit (ProduitRequestModel p) {
-		this.codeProduit = p.getCodeProduit();
-		this.libelleProduit = p.getLibelleProduit();
-		this.prix = p.getPrix();
-		this.dateCreation = p.getDateCreation();
-		this.dateDerniereModification =  p .getDateDerniereModification();
-		this.stock = p.getStock();
-		this.detailFacture = p.getDetailFacture();
-		this.categorieProduit = p.getCategorieProduit();
-	}
+
 
 	
 
