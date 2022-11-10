@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import tn.esprit.rh.achat.models.CategorieProduitRequestModel;
 
 @Entity
 @Getter
@@ -20,10 +21,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CategorieProduit implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idCategorieProduit;
@@ -32,4 +31,10 @@ public class CategorieProduit implements Serializable {
 	@OneToMany(mappedBy = "categorieProduit")
 	@JsonIgnore
 	private Set<Produit> produits;
+
+	public CategorieProduit (CategorieProduitRequestModel c) {
+		this.codeCategorie = c.getCodeCategorie();
+		this.libelleCategorie = c.getLibelleCategorie();
+		this.produits = c.getProduits();
+	}
 }
