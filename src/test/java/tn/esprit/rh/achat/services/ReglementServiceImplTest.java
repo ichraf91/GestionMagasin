@@ -16,26 +16,26 @@ import java.util.Date;
 class ReglementServiceImplTest {
 
 
-    @Autowired
-    IReglementService reglementService;
-
-    @Test
-    void TestRetrieveAllReglements() {
-
-        int sizeReglements = reglementService.retrieveAllReglements().size();
-        reglementService.addReglement(Reglement.builder().dateReglement(new Date()).payee(false).build());
-        Assertions.assertEquals(sizeReglements+1, reglementService.retrieveAllReglements().size());
-        log.info("Size:"+String.valueOf(sizeReglements));
-    }
-
-    @Test
-    void TestAddReglement() {
-        Reglement r =reglementService.addReglement(Reglement.builder()
-                .montantPaye(20.00F)
-                .payee(true).build());
-        Assertions.assertNotNull(r);
-        log.info("Reglement : "+r.toString());
-
-    }
+//    @Autowired
+//    IReglementService reglementService;
+//
+//    @Test
+//    void TestRetrieveAllReglements() {
+//
+//        int sizeReglements = reglementService.retrieveAllReglements().size();
+//        reglementService.addReglement(Reglement.builder().dateReglement(new Date()).payee(false).build());
+//        Assertions.assertEquals(sizeReglements+1, reglementService.retrieveAllReglements().size());
+//        log.info("Size:"+String.valueOf(sizeReglements));
+//    }
+//
+//    @Test
+//    void TestAddReglement() {
+//        Reglement r =reglementService.addReglement(Reglement.builder()
+//                .montantPaye(20.00F)
+//                .payee(true).build());
+//        Assertions.assertNotNull(r);
+//        log.info("Reglement : "+r.toString());
+//
+//    }
 
 }
