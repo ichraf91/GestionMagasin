@@ -5,20 +5,22 @@ services:
     ports:
       - "3306:3306"
     networks:
-      - app-mysql-network
+      - achat-mysql-network
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=achatdb
 
-  app-container:
-    image: app
+  achat-container:
+    image: achat
+    build: ./
     ports:
       - "8089:8089"
+    hostname: achat
     networks:
-      - app-mysql-network
+      - achat-mysql-network
     depends_on:
       - mysql-db
 
 networks:
-  app-mysql-network:
+  achat-mysql-network:
     driver: bridge
