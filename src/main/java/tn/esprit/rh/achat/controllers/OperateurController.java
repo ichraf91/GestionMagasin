@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.Operateur;
+import tn.esprit.rh.achat.models.OperateurRequestModel;
 import tn.esprit.rh.achat.services.IOperateurService;
 
 import java.util.List;
@@ -31,8 +32,9 @@ public class OperateurController {
 
 	@PostMapping("/add-operateur")
 	@ResponseBody
-	public Operateur addOperateur(@RequestBody Operateur op) {
-		return operateurService.addOperateur(op);
+	public Operateur addOperateur(@RequestBody OperateurRequestModel op) {
+		Operateur operateur = new Operateur(op);
+		return operateurService.addOperateur(operateur);
 	}
 
 	@DeleteMapping("/remove-operateur/{operateur-id}")
@@ -43,8 +45,9 @@ public class OperateurController {
 
 	@PutMapping("/modify-operateur")
 	@ResponseBody
-	public Operateur modifyOperateur(@RequestBody Operateur op) {
-		return operateurService.updateOperateur(op);
+	public Operateur modifyOperateur(@RequestBody OperateurRequestModel op) {
+		Operateur operateur = new Operateur(op);
+		return operateurService.updateOperateur(operateur);
 	}
 
 	

@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import tn.esprit.rh.achat.models.StockRequestModel;
 
 @Entity
 @Getter
@@ -36,6 +37,11 @@ public class Stock implements Serializable {
 		this.qte = qte;
 		this.qteMin = qteMin;
 	}
-
+	public Stock(StockRequestModel s) {
+		this.libelleStock = s.getLibelleStock();
+		this.qte = s.getQte();
+		this.qteMin = s.getQteMin();
+		this.produits = s.getProduits();
+	}
 
 }

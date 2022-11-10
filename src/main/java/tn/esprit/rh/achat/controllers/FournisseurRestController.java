@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.Fournisseur;
+import tn.esprit.rh.achat.models.FournisseurRequestModel;
 import tn.esprit.rh.achat.services.IFournisseurService;
 
 import java.util.List;
@@ -31,8 +32,9 @@ public class FournisseurRestController {
 
 	@PostMapping("/add-fournisseur")
 	@ResponseBody
-	public Fournisseur addFournisseur(@RequestBody Fournisseur f) {
-		return fournisseurService.addFournisseur(f);
+	public Fournisseur addFournisseur(@RequestBody FournisseurRequestModel f) {
+		Fournisseur fournisseur = new Fournisseur(f);
+		return fournisseurService.addFournisseur(fournisseur);
 	}
 
 	@DeleteMapping("/remove-fournisseur/{fournisseur-id}")
@@ -43,8 +45,9 @@ public class FournisseurRestController {
 
 	@PutMapping("/modify-fournisseur")
 	@ResponseBody
-	public Fournisseur modifyFournisseur(@RequestBody Fournisseur f) {
-		return fournisseurService.updateFournisseur(f);
+	public Fournisseur modifyFournisseur(@RequestBody FournisseurRequestModel f) {
+		Fournisseur fournisseur = new Fournisseur(f);
+		return fournisseurService.updateFournisseur(fournisseur);
 	}
 
 		@PutMapping(value = "/assignSecteurActiviteToFournisseur/{idSecteurActivite}/{idFournisseur}")
