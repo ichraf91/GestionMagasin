@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.Facture;
-import tn.esprit.rh.achat.models.FactureRequestModel;
 import tn.esprit.rh.achat.services.IFactureService;
 
 import java.util.Date;

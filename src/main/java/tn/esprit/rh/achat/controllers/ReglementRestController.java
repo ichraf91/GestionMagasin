@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.rh.achat.entities.Reglement;
-import tn.esprit.rh.achat.models.ReglementRequestModel;
 import tn.esprit.rh.achat.services.IReglementService;
 
 import java.util.Date;
