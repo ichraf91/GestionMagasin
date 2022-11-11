@@ -44,8 +44,8 @@ public class CategorieProduitController {
 
 	@PutMapping("/modify-categorieProduit")
 	@ResponseBody
-	public CategorieProduit modifyCategorieProduit(@RequestBody  CategorieProduitRequestModel cp) {
-		CategorieProduit categorieProduit = new CategorieProduit(cp);
+	public CategorieProduit modifyCategorieProduit(@RequestBody  CategorieProduitRequestModel cpModel) {
+		CategorieProduit categorieProduit = new CategorieProduit(cpModel);
 		return categorieProduitService.updateCategorieProduit(categorieProduit);
 	}
 
